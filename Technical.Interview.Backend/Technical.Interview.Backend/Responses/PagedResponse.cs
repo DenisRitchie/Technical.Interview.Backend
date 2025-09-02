@@ -1,8 +1,8 @@
 ﻿namespace Technical.Interview.Backend.Responses;
 
-public class PagedResponse<T>(List<T> data, Pagination pagination)
+public record PagedResponse<T>
 {
-    public Pagination Pagination { get; } = pagination;
+    public required Pagination Pagination { get; init; }
 
-    public List<T> Data { get; } = data;
+    public required List<T> Data { get; init; }
 }

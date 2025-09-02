@@ -162,13 +162,13 @@ public abstract class RepositoryBase<TEntity> : IReadRepository<TEntity> where T
         var Count = await ApplySpecification(Specification).CountAsync(CancellationToken);
         var Pagination = new Pagination(Count, Filter);
 
-        var data = await ApplySpecification(Specification)
+        var Data = await ApplySpecification(Specification)
             .Skip(Pagination.Skip)
             .Take(Pagination.Take)
             .ProjectTo<TResult>(ConfigurationProvider)
             .ToListAsync(CancellationToken);
 
-        return new PagedResponse<TResult>(data, Pagination);
+        return new PagedResponse<TResult> { Data = Data, Pagination = Pagination };
     }
 
     protected virtual IQueryable<TEntity> ApplySpecification(ISpecification<TEntity> Specification, bool EvaluateCriteriaOnly = false)
