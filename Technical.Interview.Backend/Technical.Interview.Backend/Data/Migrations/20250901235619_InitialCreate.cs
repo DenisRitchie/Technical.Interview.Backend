@@ -1,0 +1,89 @@
+﻿using System;
+
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
+namespace Technical.Interview.Backend.Data.Migrations
+{
+    /// <inheritdoc />
+    public partial class InitialCreate : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.CreateTable(
+                name: "MarcasAutos",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Nombre = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    PaisOrigen = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    SitioWeb = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Businesses", x => x.Id);
+                });
+
+            migrationBuilder.InsertData(
+                table: "MarcasAutos",
+                columns: ["Id", "Nombre", "PaisOrigen", "SitioWeb"],
+                values: new object[,]
+                {
+                    { new { Id = new Guid("c9181437-053c-4217-80c1-08ed563d0b40"), Nombre = "Toyota", PaisOrigen = "Japan", SitioWeb = "https://www.toyota.com/" } },
+                    { new { Id = new Guid("79c7dbf3-9a28-4476-832a-ee7af263c43f"), Nombre = "Ford", PaisOrigen = "United States", SitioWeb = "https://www.ford.com/" } },
+                    { new { Id = new Guid("87209a57-138b-4f7a-8a7d-4add1045296d"), Nombre = "Volkswagen", PaisOrigen = "Germany", SitioWeb = "https://www.vw.com/" } },
+                    { new { Id = new Guid("f0abecdd-3c60-45c8-9122-2a2a2f38d54e"), Nombre = "Honda", PaisOrigen = "Japan", SitioWeb = "https://www.honda.com/" } },
+                    { new { Id = new Guid("d8021a4f-2f7e-47dd-b85c-1a7484f5bcb8"), Nombre = "Chevrolet", PaisOrigen = "United States", SitioWeb = "https://www.chevrolet.com/" } },
+                    { new { Id = new Guid("1fa7dc8c-8df1-41f8-9ee0-df8415ce7773"), Nombre = "BMW", PaisOrigen = "Germany", SitioWeb = "https://www.bmw.com/" } },
+                    { new { Id = new Guid("bc7db3f4-c5d4-44d4-9b0a-4d82b6e8a8a5"), Nombre = "Mercedes-Benz", PaisOrigen = "Germany", SitioWeb = "https://www.mercedes-benz.com/" } },
+                    { new { Id = new Guid("0a2a03de-cd90-4b40-8b08-cfbc373fb9bb"), Nombre = "Hyundai", PaisOrigen = "South Korea", SitioWeb = "https://www.hyundai.com/" } },
+                    { new { Id = new Guid("06f88f73-6764-440c-b89e-5c183c918c4c"), Nombre = "Kia", PaisOrigen = "South Korea", SitioWeb = "https://www.kia.com/" } },
+                    { new { Id = new Guid("4a79b1d4-69f1-4f07-9d0a-43f1ff93a6f0"), Nombre = "Nissan", PaisOrigen = "Japan", SitioWeb = "https://www.nissan-global.com/" } },
+                    { new { Id = new Guid("e10b94bb-f9f1-418d-bad8-88dbf414820c"), Nombre = "Mazda", PaisOrigen = "Japan", SitioWeb = "https://www.mazda.com/" } },
+                    { new { Id = new Guid("2e04b8f6-5c5b-45f5-8b70-1a878da6c6e2"), Nombre = "Subaru", PaisOrigen = "Japan", SitioWeb = "https://www.subaru.com/" } },
+                    { new { Id = new Guid("ca3b8128-2f37-42f2-8a52-270e83984a3a"), Nombre = "Mitsubishi", PaisOrigen = "Japan", SitioWeb = "https://www.mitsubishi-motors.com/" } },
+                    { new { Id = new Guid("34d423ff-cd73-48d3-8a37-2f37eac8aa45"), Nombre = "Lexus", PaisOrigen = "Japan", SitioWeb = "https://www.lexus.com/" } },
+                    { new { Id = new Guid("b28d165d-3a8f-43d3-9616-5fc07e03db7b"), Nombre = "Infiniti", PaisOrigen = "Japan", SitioWeb = "https://www.infiniti.com/" } },
+                    { new { Id = new Guid("3cb1b8af-367c-4a18-9f64-9162c23dc1f2"), Nombre = "Acura", PaisOrigen = "Japan", SitioWeb = "https://www.acura.com/" } },
+                    { new { Id = new Guid("f52031ab-2d1e-4c3c-bf8e-4e056b8a3ff0"), Nombre = "Audi", PaisOrigen = "Germany", SitioWeb = "https://www.audi.com/" } },
+                    { new { Id = new Guid("33f7b0ee-92d1-48b6-8a1c-4488825c91f9"), Nombre = "Porsche", PaisOrigen = "Germany", SitioWeb = "https://www.porsche.com/" } },
+                    { new { Id = new Guid("b75a72c3-2910-45a7-9ff4-7eb62a5c5821"), Nombre = "Opel", PaisOrigen = "Germany", SitioWeb = "https://www.opel.com/" } },
+                    { new { Id = new Guid("42c31f0f-8a19-4cfb-a4f7-288da69b1e3c"), Nombre = "Peugeot", PaisOrigen = "France", SitioWeb = "https://www.peugeot.com/" } },
+                    { new { Id = new Guid("f2a31b0e-4326-403c-967a-f0ff72c86326"), Nombre = "Renault", PaisOrigen = "France", SitioWeb = "https://www.renault.com/" } },
+                    { new { Id = new Guid("4e5a8422-f5de-45df-8e11-26f5aaf73a26"), Nombre = "Citroën", PaisOrigen = "France", SitioWeb = "https://www.citroen.com/" } },
+                    { new { Id = new Guid("e05e8a92-d8cb-4fbb-bdd7-743cb4c58bdb"), Nombre = "Fiat", PaisOrigen = "Italy", SitioWeb = "https://www.fiat.com/" } },
+                    { new { Id = new Guid("a64c9c3d-5201-4f7b-92d6-9a7e7db0f799"), Nombre = "Ferrari", PaisOrigen = "Italy", SitioWeb = "https://www.ferrari.com/" } },
+                    { new { Id = new Guid("ad9607f4-c14a-4425-87a3-f8b47c0bb9a4"), Nombre = "Lamborghini", PaisOrigen = "Italy", SitioWeb = "https://www.lamborghini.com/" } },
+                    { new { Id = new Guid("bb9ebc8b-64a8-464d-8f5d-92f03ad1fba2"), Nombre = "Maserati", PaisOrigen = "Italy", SitioWeb = "https://www.maserati.com/" } },
+                    { new { Id = new Guid("6c2d1b0f-2372-490a-9b41-11d25f1e4a7a"), Nombre = "Alfa Romeo", PaisOrigen = "Italy", SitioWeb = "https://www.alfaromeo.com/" } },
+                    { new { Id = new Guid("fd23c3d0-73a7-462e-9265-d07c90cbbeb0"), Nombre = "Jaguar", PaisOrigen = "United Kingdom", SitioWeb = "https://www.jaguar.com/" } },
+                    { new { Id = new Guid("b67fa30c-bc4a-4c6e-a51a-6a267bd0eb57"), Nombre = "Land Rover", PaisOrigen = "United Kingdom", SitioWeb = "https://www.landrover.com/" } },
+                    { new { Id = new Guid("0efb99ad-b99b-46eb-80a0-52d6e1c79284"), Nombre = "Aston Martin", PaisOrigen = "United Kingdom", SitioWeb = "https://www.astonmartin.com/" } },
+                    { new { Id = new Guid("27065f6d-5560-4522-b032-ff4547b6d22a"), Nombre = "Bentley", PaisOrigen = "United Kingdom", SitioWeb = "https://www.bentleymotors.com/" } },
+                    { new { Id = new Guid("eea3c6dd-28e6-4b14-9edc-28e4f60c66a0"), Nombre = "Rolls-Royce", PaisOrigen = "United Kingdom", SitioWeb = "https://www.rolls-roycemotorcars.com/" } },
+                    { new { Id = new Guid("fc58d189-97b0-4fbc-85c8-2e279342c8f2"), Nombre = "Mini", PaisOrigen = "United Kingdom", SitioWeb = "https://www.mini.com/" } },
+                    { new { Id = new Guid("8236c6c8-30ff-4aa5-b4dd-c245e5bfc908"), Nombre = "Volvo", PaisOrigen = "Sweden", SitioWeb = "https://www.volvocars.com/" } },
+                    { new { Id = new Guid("1784cfea-d0a2-4aa1-ae12-6473c6463e85"), Nombre = "Saab", PaisOrigen = "Sweden", SitioWeb = "https://www.saab.com/" } },
+                    { new { Id = new Guid("b9f706b3-7052-4e6a-9aa6-0e05e92c3d21"), Nombre = "Scania", PaisOrigen = "Sweden", SitioWeb = "https://www.scania.com/" } },
+                    { new { Id = new Guid("7c38fdb9-8b62-4f58-87e8-43a6e6d1823b"), Nombre = "Tesla", PaisOrigen = "United States", SitioWeb = "https://www.tesla.com/" } },
+                    { new { Id = new Guid("24c98835-dcd3-4dbf-81f7-94abf3ad8cf0"), Nombre = "Chrysler", PaisOrigen = "United States", SitioWeb = "https://www.chrysler.com/" } },
+                    { new { Id = new Guid("9db28ab2-d65c-442a-8058-30236f7f3f4f"), Nombre = "Dodge", PaisOrigen = "United States", SitioWeb = "https://www.dodge.com/" } },
+                    { new { Id = new Guid("d4dc25a1-d8fb-4c29-b6a7-f62b441fa6b2"), Nombre = "Jeep", PaisOrigen = "United States", SitioWeb = "https://www.jeep.com/" } },
+                    { new { Id = new Guid("6fb5b87b-77a0-403b-b622-5f72c13a0b77"), Nombre = "RAM", PaisOrigen = "United States", SitioWeb = "https://www.ramtrucks.com/" } },
+                    { new { Id = new Guid("f74a95f8-6d7f-4df6-84b7-5f9b3f5e3a3c"), Nombre = "Buick", PaisOrigen = "United States", SitioWeb = "https://www.buick.com/" } },
+                    { new { Id = new Guid("69c4420c-174d-4237-a437-35ed7c1f5d7e"), Nombre = "Cadillac", PaisOrigen = "United States", SitioWeb = "https://www.cadillac.com/" } },
+                    { new { Id = new Guid("849d6b63-15f8-46ee-aef1-ef531f8a6f23"), Nombre = "GMC", PaisOrigen = "United States", SitioWeb = "https://www.gmc.com/" } }
+                });
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(name: "MarcasAutos");
+        }
+    }
+}

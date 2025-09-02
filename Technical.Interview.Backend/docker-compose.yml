@@ -1,0 +1,24 @@
+services:
+  technical.interview.backend:
+    image: ${DOCKER_REGISTRY-}technicalinterviewbackend
+    build:
+      context: .
+      dockerfile: Technical.Interview.Backend/Dockerfile
+    ports:
+      - "5035:80"
+    depends_on:
+      - postgres_db
+    environment:
+      - connectionStrings__DefaultConnection=Host=postgres_db;Database=postgres;Username=postgres;Password=postgres
+  postgres_db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+    postgres_data: {}

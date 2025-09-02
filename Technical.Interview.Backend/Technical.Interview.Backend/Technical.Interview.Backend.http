@@ -1,0 +1,6 @@
+@Technical.Interview.Backend_HostAddress = http://localhost:5035
+
+GET {{Technical.Interview.WebApi_HostAddress}}/MarcasAutos/
+Accept: application/json
+
+###
